@@ -1,7 +1,7 @@
 import React, { useCallback, useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
-import { followUser, getUserFollowers, unfollowUser } from '../redux/features/followersSlice'
+import { getUserFollowers } from '../redux/features/followersSlice'
 
 function MyFollowers() {
     const dispatch = useDispatch()

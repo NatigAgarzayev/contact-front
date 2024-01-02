@@ -7,7 +7,7 @@ import { toast } from 'react-toastify'
 import Settings from './Settings'
 import { getUserAvatar } from '../redux/features/profileSlice'
 import { getUserNotification, readNotificationByUser } from '../redux/features/notificationsSlice'
-
+import { baseURL } from '../utils/constant'
 
 function Navbar() {
     const dispatch = useDispatch()
@@ -151,7 +151,7 @@ function Navbar() {
                                                             <p className='w-14 h-14 text-3xl rounded-full text-white uppercase flex items-center justify-center'>{user?.username.slice(0, 2)}</p>
                                                         </div>
                                                         :
-                                                        <img className='border w-14 h-14 object-cover rounded-full bg-white' src={`http://localhost:4444/${avatar}`} alt="User avatar" />
+                                                        <img className='border w-14 h-14 object-cover rounded-full bg-white' src={`${baseURL}/${avatar}`} alt="User avatar" />
                                                 }
                                             </button>
                                             <div className="menu__dropdown absolute top-6 right-0 z-40 my-4 text-base list-none bg-white divide-y divide-gray-100 rounded-lg shadow dark:bg-gray-700 dark:divide-gray-600" id="user-dropdown">

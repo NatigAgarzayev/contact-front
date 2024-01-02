@@ -12,6 +12,7 @@ import { createComment, getPostComments } from '../redux/features/commentSlice'
 import { checkIsAuth } from '../redux/features/authSlice'
 import { sendUserReport } from '../redux/features/reportSlice'
 import SidebarLeftHam from '../components/SidebarLeftHam'
+import { baseURL } from '../utils/constant'
 function PostPage() {
     const dispatch = useDispatch()
     const isAuth = useSelector(checkIsAuth)
@@ -280,11 +281,11 @@ function PostPage() {
                                                                 }
                                                             </div>
                                                             <video controls muted={muted === 'true' ? true : false} onMouseOver={(e) => e.target.play()} width={1000} height={600} loop className="mx-auto cursor-pointer embed-responsive embed-responsive-16by9 relative overflow-hidden rounded-2xl" >
-                                                                <source src={`http://localhost:4444/${item?.imageUrl}`} type="video/mp4" />
+                                                                <source src={`${baseURL}/${item?.imageUrl}`} type="video/mp4" />
                                                             </video>
                                                         </div>
                                                         : (
-                                                            <img className='object-cover w-full mx-auto max-w-5xl' src={`http://localhost:4444/${item?.imageUrl}`} alt='' />
+                                                            <img className='object-cover w-full mx-auto max-w-5xl' src={`${baseURL}/${item?.imageUrl}`} alt='' />
                                                         )
 
                                                 }

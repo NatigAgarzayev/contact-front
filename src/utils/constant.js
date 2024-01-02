@@ -1,0 +1,1 @@
+export const baseURL = "https://contact-back-ntl0.onrender.com"

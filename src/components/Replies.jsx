@@ -7,6 +7,7 @@ import { toast } from 'react-toastify'
 import { checkIsAuth } from '../redux/features/authSlice'
 import { createComment } from '../redux/features/commentSlice'
 import { sendUserReport } from '../redux/features/reportSlice'
+import { baseURL } from '../utils/constant'
 function Replies({ reply, replyId, itemId }) {
     const navigate = useNavigate()
     const { id } = useParams()
@@ -167,7 +168,7 @@ function Replies({ reply, replyId, itemId }) {
                                             :
                                             <img
                                                 className="mr-2 w-10 h-10 object-cover rounded-full"
-                                                src={`http://localhost:4444/${reply.icon}`}
+                                                src={`${baseURL}/${reply.icon}`}
                                                 alt={reply?.username} />
                                     }
                                     <span className={user?._id === reply.author ? 'bg-yellow-400 rounded-3xl px-3 py-0.5 font-semibold text-gray-600 cursor-pointer text-black/80' : 'border rounded-3xl px-3 py-0.5 font-semibold text-zync-600 cursor-pointer'}>{reply?.username}</span>

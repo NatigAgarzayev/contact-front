@@ -6,6 +6,7 @@ import { Helmet } from 'react-helmet'
 import { checkIsAuth } from '../redux/features/authSlice'
 import axios from '../utils/axios'
 import { updatePost } from '../redux/features/postSlice'
+import { baseURL } from '../utils/constant'
 function EditPostPage() {
     const [title, setTitle] = useState('')
     const [text, setText] = useState('')
@@ -93,10 +94,10 @@ function EditPostPage() {
                                         oldImage && !canceled && (
                                             oldImage.includes('.mp4') ?
                                                 <video width="750" height="500" controls >
-                                                    <source src={`http://localhost:4444/${oldImage}`} type="video/mp4" />
+                                                    <source src={`${baseURL}/${oldImage}`} type="video/mp4" />
                                                 </video>
                                                 :
-                                                <img className='h-1/2 w-1/2' src={`http://localhost:4444/${oldImage}`} alt={oldImage.name} />
+                                                <img className='h-1/2 w-1/2' src={`${baseURL}/${oldImage}`} alt={oldImage.name} />
                                         )
                                     }
                                     {

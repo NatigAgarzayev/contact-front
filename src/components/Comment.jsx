@@ -8,6 +8,7 @@ import { toast } from 'react-toastify'
 import { checkIsAuth } from '../redux/features/authSlice'
 import Replies from './Replies'
 import { sendUserReport } from '../redux/features/reportSlice'
+import { baseURL } from '../utils/constant'
 function Comment({ item }) {
     const { id } = useParams()
     const isAuth = useSelector(checkIsAuth)
@@ -193,7 +194,7 @@ function Comment({ item }) {
                                             :
                                             <img
                                                 className="mr-2 w-10 h-10 object-cover rounded-full"
-                                                src={`http://localhost:4444/${item.icon}`}
+                                                src={`${baseURL}/${item.icon}`}
                                                 alt={item?.username} />
                                     }
                                     <span className={user?._id === item.author ? 'bg-yellow-400 rounded-3xl px-3 py-0.5 font-semibold text-gray-600 cursor-pointer dark:text-black/80' : 'border rounded-3xl px-3 py-0.5 font-semibold text-zync-600 cursor-pointer'}>{item?.username}</span>
