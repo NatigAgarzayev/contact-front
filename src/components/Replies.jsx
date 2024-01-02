@@ -168,7 +168,7 @@ function Replies({ reply, replyId, itemId }) {
                                             :
                                             <img
                                                 className="mr-2 w-10 h-10 object-cover rounded-full"
-                                                src={`${baseURL}/${reply.icon}`}
+                                                src={`${baseURL.slice(0, -4)}/${reply.icon}`}
                                                 alt={reply?.username} />
                                     }
                                     <span className={user?._id === reply.author ? 'bg-yellow-400 rounded-3xl px-3 py-0.5 font-semibold text-gray-600 cursor-pointer text-black/80' : 'border rounded-3xl px-3 py-0.5 font-semibold text-zync-600 cursor-pointer'}>{reply?.username}</span>

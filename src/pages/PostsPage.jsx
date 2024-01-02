@@ -59,11 +59,11 @@ function PostsPage() {
                                                     <svg className='fill-black absolute left-6 top-5  w-[35px] h-[35px] sm:w-[50px] sm:h-[50px] sm:left-7 sm:top-6' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z" /></svg>
                                                 </button>
                                                 <video className="relative w-full overflow-hidden rounded-3xl max-w-7xl mx-auto">
-                                                    <source src={`${baseURL}/${item?.imageUrl}`} type="video/mp4" />
+                                                    <source src={`${baseURL.slice(0, -4)}/${item?.imageUrl}`} type="video/mp4" />
                                                 </video>
                                             </div >
                                             : (
-                                                <img className='object-cover w-full h-auto max-w-7xl mx-auto' src={`${baseURL}/${item?.imageUrl}`} alt='' />
+                                                <img className='object-cover w-full h-auto max-w-7xl mx-auto' src={`${baseURL.slice(0, -4)}/${item?.imageUrl}`} alt='' />
                                             )
                                     }
                                 </div>

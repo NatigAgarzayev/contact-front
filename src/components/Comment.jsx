@@ -194,7 +194,7 @@ function Comment({ item }) {
                                             :
                                             <img
                                                 className="mr-2 w-10 h-10 object-cover rounded-full"
-                                                src={`${baseURL}/${item.icon}`}
+                                                src={`${baseURL.slice(0, -4)}/${item.icon}`}
                                                 alt={item?.username} />
                                     }
                                     <span className={user?._id === item.author ? 'bg-yellow-400 rounded-3xl px-3 py-0.5 font-semibold text-gray-600 cursor-pointer dark:text-black/80' : 'border rounded-3xl px-3 py-0.5 font-semibold text-zync-600 cursor-pointer'}>{item?.username}</span>

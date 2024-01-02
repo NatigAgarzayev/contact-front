@@ -164,7 +164,7 @@ function ProfilePage() {
                                                 image ?
                                                     (<img className='border w-[140px] h-[140px] object-cover rounded-full bg-white' src={URL.createObjectURL(image)} alt="Logo" />)
                                                     :
-                                                    (<img className='border w-[140px] h-[140px] object-cover rounded-full bg-white' src={`${baseURL}/${userAvatar}`} alt="Logo" />)
+                                                    (<img className='border w-[140px] h-[140px] object-cover rounded-full bg-white' src={`${baseURL.slice(0, -4)}/${userAvatar}`} alt="Logo" />)
 
                                         }
                                     </div>
@@ -297,7 +297,7 @@ function ProfilePage() {
                                     </p>
                                 </div>
                                 :
-                                <img className='border absolute z-50 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[240px] h-[240px] md:w-[540px] md:h-[540px] text-[100px] md:text-[300px] object-cover rounded-full bg-white' src={`${baseURL}/${userAvatar}`} alt="User avatar" />
+                                <img className='border absolute z-50 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[240px] h-[240px] md:w-[540px] md:h-[540px] text-[100px] md:text-[300px] object-cover rounded-full bg-white' src={`${baseURL.slice(0, -4)}/${userAvatar}`} alt="User avatar" />
                         }
                     </div>
                 )
@@ -327,7 +327,7 @@ function ProfilePage() {
                                                                     <p className='w-[140px] h-[140px] text-7xl rounded-full text-white uppercase flex items-center justify-center'>{userInfo?.username.slice(0, 2)}</p>
                                                                 </div>
                                                                 :
-                                                                <img className='border w-[140px] h-[140px] object-cover rounded-full bg-white' src={`${baseURL}/${userAvatar}`} alt="User avatar" />
+                                                                <img className='border w-[140px] h-[140px] object-cover rounded-full bg-white' src={`${baseURL.slice(0, -4)}/${userAvatar}`} alt="User avatar" />
                                                         }
                                                         {
                                                             user?._id === id ?

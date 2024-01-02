@@ -35,7 +35,7 @@ function AdminHeader() {
                         <div className='flex items-center gap-5'>
                             <p className='font-bold'>{admin?.username}</p>
                             <button onClick={() => isDrop(true)} className="relative block w-12 h-12 overflow-hidden rounded-full shadow focus:outline-none">
-                                <img className="object-cover w-12 h-12" src={`${baseURL}/${admin?.avatar}`} alt="Your avatar" />
+                                <img className="object-cover w-12 h-12" src={`${baseURL.slice(0, -4)}/${admin?.avatar}`} alt="Your avatar" />
                             </button>
                         </div>
 

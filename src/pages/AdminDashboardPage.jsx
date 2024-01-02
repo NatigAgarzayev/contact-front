@@ -127,13 +127,13 @@ function AdminDashboardPage() {
                                         {
                                             postDetail.postInfo[0].imageUrl.includes('.mp4') ? (
                                                 <video className="relative mx-auto w-full overflow-hidden rounded-3xl">
-                                                    <source src={`${baseURL}/${postDetail.postInfo[0]?.imageUrl}`} type="video/mp4" />
+                                                    <source src={`${baseURL.slice(0, -4)}/${postDetail.postInfo[0]?.imageUrl}`} type="video/mp4" />
                                                 </video>
                                             )
                                                 :
                                                 (
                                                     postDetail.postInfo[0].imageUrl !== '' ?
-                                                        <img className="object-cover w-48 h-48" src={`${baseURL}/${postDetail.postInfo[0]?.imageUrl}`} alt="" />
+                                                        <img className="object-cover w-48 h-48" src={`${baseURL.slice(0, -4)}/${postDetail.postInfo[0]?.imageUrl}`} alt="" />
                                                         :
                                                         <div className='text-2xl text-white flex items-center h-full justify-center'>
                                                             <p>*No image*</p>
@@ -186,7 +186,7 @@ function AdminDashboardPage() {
                                                 :
                                                 <img
                                                     className="w-48 h-48 object-cover rounded-full"
-                                                    src={`${baseURL}/${userDetail.userInfo[0]?.avatar}`}
+                                                    src={`${baseURL.slice(0, -4)}/${userDetail.userInfo[0]?.avatar}`}
                                                     alt={userDetail.userInfo[0]?.avatar} />
                                         }
                                     </div>
@@ -396,7 +396,7 @@ function AdminDashboardPage() {
                                                                         :
                                                                         <img
                                                                             className="mr-2 w-10 h-10 object-cover rounded-full"
-                                                                            src={`${baseURL}/${item?.avatar}`}
+                                                                            src={`${baseURL.slice(0, -4)}/${item?.avatar}`}
                                                                             alt={item?.username} />
                                                                 }
                                                             </div>

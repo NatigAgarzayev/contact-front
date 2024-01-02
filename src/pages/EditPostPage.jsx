@@ -94,10 +94,10 @@ function EditPostPage() {
                                         oldImage && !canceled && (
                                             oldImage.includes('.mp4') ?
                                                 <video width="750" height="500" controls >
-                                                    <source src={`${baseURL}/${oldImage}`} type="video/mp4" />
+                                                    <source src={`${baseURL.slice(0, -4)}/${oldImage}`} type="video/mp4" />
                                                 </video>
                                                 :
-                                                <img className='h-1/2 w-1/2' src={`${baseURL}/${oldImage}`} alt={oldImage.name} />
+                                                <img className='h-1/2 w-1/2' src={`${baseURL.slice(0, -4)}/${oldImage}`} alt={oldImage.name} />
                                         )
                                     }
                                     {
