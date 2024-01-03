@@ -92,6 +92,7 @@ function Comment({ item }) {
 
     const likeComment = async (id) => {
         try {
+            if (!user.token) throw Error
             dispatch(likeTheComment(id))
             if (likes?.includes(user?._id)) {
                 setLikes(item.likes.filter((id) => String(id) !== user?._id))
@@ -101,7 +102,7 @@ function Comment({ item }) {
             }
 
         } catch (error) {
-            toast.error('Error :[')
+            toast.error('Please, Sign in')
         }
     }
 

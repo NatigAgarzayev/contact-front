@@ -67,6 +67,7 @@ function Replies({ reply, replyId, itemId }) {
 
     const likeComment = (id) => {
         try {
+            if (!user.token) throw Error
             dispatch(likeTheComment(id))
             if (likes?.includes(user?._id)) {
                 setLikes(reply.likes.filter((id) => String(id) !== user?._id))
@@ -75,7 +76,7 @@ function Replies({ reply, replyId, itemId }) {
                 setLikes([...reply.likes, user?._id])
             }
         } catch (error) {
-            toast.error('Error :[')
+            toast.error('Please, Sign in')
         }
     }
 

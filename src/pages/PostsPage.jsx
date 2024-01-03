@@ -14,17 +14,17 @@ function PostsPage() {
     const handlePostById = (id) => {
         navigate(`/${id}`)
     }
-    const fetchMyPosts = async () => {
-        try {
-            const { data } = await axios.get('/posts/users/me')
-            setPosts(data)
-        } catch (error) {
-            console.log(error)
-        }
-    }
     useEffect(() => {
+        const fetchMyPosts = async () => {
+            try {
+                const { data } = await axios.get('/posts/users/me')
+                setPosts(data)
+            } catch (error) {
+                console.log(error)
+            }
+        }
         fetchMyPosts()
-    }, [fetchMyPosts])
+    }, [])
     return (
         <div className='flex flex-col md:flex-row gap-0 md:gap-5 calc__height dark:bg-gray-600'>
             <Helmet>

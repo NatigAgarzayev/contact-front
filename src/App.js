@@ -117,6 +117,9 @@ function App() {
     window.sessionStorage.setItem('mute', true)
   }, [])
   const dispatch = useDispatch()
+  if(!window.localStorage.getItem('theme')){
+    window.localStorage.setItem('theme', 'light')
+  }
   if (window.localStorage.getItem('theme') === 'light') {
     document.documentElement.classList.add('light')
   }
